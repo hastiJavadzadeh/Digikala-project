@@ -7,23 +7,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        String username = "username";
-        String password = "password";
-        String email = "email";
-        String address = "address";
-        String phone = "0123456789";
-
-        String companyName = "name";
-        String pass = "pass";
-
         Shop shop = new Shop();
-        User user = new User(username, password, phone, email, address);
-        Seller seller = new Seller(companyName, pass);
-        runMenu(shop, user, seller);
+        runMenu(shop);
     }
 
-    public static void runMenu(Shop shop, User user, Seller seller) {
+    public static void runMenu(Shop shop) {
 
         Scanner input = new Scanner(System.in);
         shop.setName("Digizon");
