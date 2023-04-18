@@ -116,6 +116,10 @@ public class Main {
                             String emailAddress = input.next();
                             System.out.println("Enter phone number : ");
                             String phone = input.next();
+                            if (phone.length() != 11) {
+                                System.out.println("Enter phone number correctly");
+                                runMenu(shop);
+                            }
                             System.out.println("Enter your address : ");
                             String address = input.next();
 
@@ -172,9 +176,7 @@ public class Main {
                         System.out.println("Product ID : " + shop.books.get(i).getID());
                         System.out.println("Price : " + shop.books.get(i).getPrice());
                         System.out.println("Seller : " + shop.books.get(i).getSeller().getCompanyName());
-//                        if (shop.books.get(i).getQuantity() == 0) {
-//                            System.out.println("Not available now!");
-//                        }
+
                     }
                 } else if (numTwo == 2) {
                     for (int i = 0; i < shop.pencils.size(); i++) {
@@ -541,8 +543,13 @@ public class Main {
             int quantity = input.nextInt();
             System.out.println("Enter product ID : ");
             String ID = input.next();
-            System.out.println("Enter product category : (In lower case letters)");//book,pen,pencil,shirts,etc.
+            if (ID.length() != 10) {
+                System.out.println("ID must be a 10 digit number");
+                sellerMenu(shop,seller);
+            }
+            System.out.println("Enter product category : ");//book,pen,pencil,shirts,etc.
             String category = input.next();
+            category = category.toLowerCase();
             if (category.contains("book")) {
                 System.out.println("Enter author name : ");
                 String author = input.next();
